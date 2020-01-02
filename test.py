@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import time
-import icp
+import icp_oticp
 
 # Constants
 N = 10                                    # number of random points in the dataset
@@ -80,7 +80,7 @@ def test_icp(A,B):
     m = A.shape[0]
 
     start = time.time()
-    _,_ = icp.icp(A, B, max_iterations=20)
+    _,_ = icp_oticp.icp(A, B, max_iterations=20)
     total_time += time.time() - start
 
     print('icp time: {:.3}'.format(total_time/num_tests))
@@ -92,7 +92,7 @@ def test_icp_ot(A,B):
     m,n = A.shape
 
     start = time.time()
-    _, iterations = icp.icp_ot(A, B, max_iterations=20)
+    _, iterations = icp_oticp.icp_ot(A, B, max_iterations=20)
     total_time += time.time() - start
 
     print('icp time: {:.3}'.format(total_time/num_tests))
