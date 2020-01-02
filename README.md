@@ -1,4 +1,4 @@
-# shape-matching-ICP-optimal-transport
+# Shape matching algorithms: ICP and Optimal Transport based ICP
 
 Two algorithms to solve shape matching problem:
 
